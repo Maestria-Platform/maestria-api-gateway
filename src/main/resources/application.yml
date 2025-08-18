@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: maestria-api-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: user_service_route
+          uri: http://user-service:8081
+
+          predicates:
+            - Path=/api/v1/users/**, /login/oauth2/**, /oauth2/**
+logging:
+  level:
+    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
+    org.springframework.cloud.gateway: TRACE
