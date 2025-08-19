@@ -12,7 +12,7 @@ spring:
           uri: http://user-service:8081
 
           predicates:
-            - Path=/api/v1/users/**, /login/oauth2/**, /oauth2/**
+            - Path=/api/v1/users/**, /api/v1/admin/**, /login/oauth2/**, /oauth2/**
 logging:
   level:
     org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
