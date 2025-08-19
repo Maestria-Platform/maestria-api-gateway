@@ -13,6 +13,13 @@ spring:
 
           predicates:
             - Path=/api/v1/users/**, /api/v1/admin/**, /login/oauth2/**, /oauth2/**
+
+        - id: course_service_route
+          uri: http://course-service:8082
+
+          predicates:
+              - Path=/api/v1/courses/**
+
 logging:
   level:
     org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: INFO
